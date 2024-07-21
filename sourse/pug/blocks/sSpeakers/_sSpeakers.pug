@@ -1,0 +1,24 @@
+mixin sSpeakers(data)
+	// start sSpeakers
+	+b.SECTION.sSpeakers.section#sSpeakers&attributes(attributes)
+		.container
+			+img('img/puzzle-orange.png').puzzle-orange-2
+			+img('img/puzzle-orange.png').puzzle-orange
+			+img('img/svg/disk.svg').disk
+			+b.section-title.text-center
+				h2 Спикеры
+			+e.row.row
+				+speakerCard(1, 'Ольга Клинг', 'Генеральный директор ЛюдиPeople')
+				+speakerCard(3, 'Константин Шобанов', 'Мотивационный тренер по продажам и переговорам, построению отделов продаж, эффективным коммуникациям с клиентами и партнерами.')
+				+speakerCard(2, 'Семен Теняев', 'Основатель TenChat')
+				+speakerCard(6, 'Снежанна Манько', 'Совладелец имидж-лаборатории Персона в Москве')
+				+speakerCard(5, 'Никита Прохоров', 'Основатель компаний №1 по репутации в сети, Автор трех бестселлеров, Проекты Reputation Lab, Sidorin Lab, Reputation House, Владелец бизнесов с оценкой 20+ M USD')
+				+speakerCard(4, 'Павел Вербняк', 'Международный тренер-консультант по личной эффективности, мотивации и психологии успеха. Основатель и руководитель проекта "Успешное мышление"')
+	// end sSpeakers
+
+mixin speakerCard(img, title, text)
+	+e.col.col.col-lg-4
+		+b.card-speaker.text-center
+			+e.img-wrap: +img(`img/speaker-${img}.png`)
+			+e.title= title
+			+e.text= text

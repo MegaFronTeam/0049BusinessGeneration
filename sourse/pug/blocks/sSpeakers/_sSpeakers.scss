@@ -1,0 +1,112 @@
+// start .sSpeakers
+.sSpeakers {
+	--sPT: #{rem(108)};
+	// --sPB: #{rem()};
+	--sTPB: #{rem(68)};
+	
+  background: $primary;
+	&__row {
+    justify-content: space-between;
+    row-gap: rem(30);
+    @include media-breakpoint-up(lg) {
+      row-gap: rem(72);
+    }
+	}
+
+  .container {
+    position: relative;
+  }
+
+  .puzzle-orange {
+    position: absolute;
+    top: -28px;
+    left: 100%;
+    transform: rotate(-264deg) translateY(32%);
+  }
+
+  .puzzle-orange-2 {
+    position: absolute;
+    top: 47%;
+    left: -190px;
+    transform: rotate(-133deg);
+  }
+
+  .disk {
+    position: absolute;
+    top: -98px;
+    left: 100%;
+    transform: translateX(-38%);
+  }
+
+	.section-title{
+		color: $white;
+	}
+
+	&__col{
+    @include media-breakpoint-up(lg) {
+      &:nth-child(2) .card-speaker,
+      &:nth-child(5) .card-speaker {
+        margin: auto;
+      }
+      &:nth-child(3n) .card-speaker {
+        margin-left: auto;
+      }
+    }
+	}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sSpeakers
+
+.card-speaker {
+  color: $white;
+  max-width: rem(324);
+  
+  @include media-breakpoint-down(lg) {
+    margin: auto;
+  }
+  
+
+  img {
+    max-width: 100%;
+  }
+
+  &__img-wrap {
+    margin-bottom: rem(20);
+    position: relative;
+    z-index: 1;
+    width: rem(324);
+    max-width: 100%;
+    border-radius: 0 0 46% 46%;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: rem(324);
+      background: $green;
+      border-radius: 50%;
+      z-index: -1;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: rem(5);
+  }
+
+  &__text {
+    font-weight: 500;
+    line-height: 1.2;
+    text-wrap: pretty;
+  }
+}
