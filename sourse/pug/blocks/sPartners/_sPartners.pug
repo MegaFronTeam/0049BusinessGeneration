@@ -1,0 +1,17 @@
+mixin sPartners(data)
+	// start sPartners
+	+b.SECTION.sPartners.section#sPartners&attributes(attributes)
+		.container
+			+e.wrap
+				+b.section-title.text-center
+					h2 Партнёры
+					p Наши партнёры – это ведущие эксперты и организации, которые поддерживают молодёжное предпринимательство в России. 
+					span Среди них:
+				+e.row
+					.row
+						.col-auto: +img('img/sPartners-img-1.png')
+						.col-auto: +img('img/sPartners-img-2.png')
+						.col-auto: +img('img/sPartners-img-3.png')
+						.col-auto: +img('img/sPartners-img-4.png')
+						.col-auto: +img('img/sPartners-img-5.png')
+	// end sPartners

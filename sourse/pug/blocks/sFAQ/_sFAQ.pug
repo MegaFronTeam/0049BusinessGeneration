@@ -1,7 +1,8 @@
 mixin sFAQ(data)
 	// start sFAQ
 	+b.SECTION.sFAQ.section#sFAQ&attributes(attributes)
-		.container
+		+e.container.container
+			+img('img/sFAQ-bg-1.png').bg
 			+b.section-title
 				h2 Часто задаваемые вопросы:
 			+ddGroup
