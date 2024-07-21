@@ -1,0 +1,22 @@
+mixin sParticipating(data)
+	// start sParticipating
+	+b.SECTION.sParticipating.section#sParticipating&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Условия участия
+				.sub-title Наша программа включает четыре Трека, которые ориентированы на различные категории участников:
+			+e.cards
+				+img('img/gold.png').gold
+				+cardParticipating('Трек 1: Обучающиеся 8-11 классов (14-18 лет)')
+				+cardParticipating('Трек 2: Обучающиеся профессиональных образовательных организаций (16-20 лет)')
+				+cardParticipating('Трек 3: Обучающиеся высших учебных заведений (16-25 лет)')
+				+cardParticipating('Трек 4: Молодые предприниматели с бизнес-идеями (16-35 лет)')
+			.bottom-wrapper
+				.sub-text Выбирай свой трек и начни работу над своим делом уже сегодня!
+				+icon('arrow-hand')
+	// end sParticipating
+
+mixin cardParticipating(text)
+	+b.A.card-participating(href='#')
+		+e.text= text
+		.icon-wrap: +icon('arrow')

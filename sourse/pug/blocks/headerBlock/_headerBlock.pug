@@ -2,10 +2,24 @@ mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 		.container
-			+b.section-title
-				h1 Бизнес.<br>Поколение
-				.sub-text #[span Бесплатная] онлайн-программа по развитию предпринимательских компетенций и старту бизнеса
 
-			.row
-						
+			+e.row.row
+				+e.col.col-12.col-lg-8
+					+img('img/svg/drops.svg').drops
+					+b.section-title
+						h1 Бизнес.<br>Поколение
+							+img('img/svg/coursor.svg').coursor
+						.sub-text #[span Бесплатная] онлайн-программа по развитию предпринимательских компетенций и старту бизнеса
+					+e.block
+						+e.item Наша миссия – помочь воплотить твою мечту или идею в реальный бизнес.
+						+e.item
+							p В «Бизнес.Поколении» действующие предприниматели, эксперты и бизнес-тренеры в онлайн-формате расскажут участникам о предпринимательской и инновационной деятельности, а также помогут запустить своё дело с нуля.
+							p 40 лучших из лучших участников в финале представят свой проект инвесторам в рамках заключительного этапа – инвестиционных сессий, и, при успешной защите, получат  консультационную и, возможно, финансовую поддержку в его реализации.
+
+				+e.col.col-12.col-lg-4
+					+img('img/puzzle-orange.png').puzzle-orange
+					+img('img/svg/disks.svg').disks
+					+e.img-wrap.ms-auto
+						+img('img/puzzles.png').puzzles
+						+img('img/headerBlock-img.png').img
 	// end headerBlock
