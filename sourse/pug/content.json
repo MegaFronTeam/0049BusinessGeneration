@@ -1,9 +1,9 @@
 {
 	"nav": [
-		{"name": "Участие", "url": "#"},
-		{"name": "Спикеры", "url": "#"},
+		{"name": "Участие", "url": "#sParticipating"},
+		{"name": "Спикеры", "url": "#sSpeakers"},
 		{"name": "Регистрация", "url": "#"},
-		{"name": "Вопросы", "url": "#"}
+		{"name": "Вопросы", "url": "#sFAQ"}
 	],
 	"social": ["vk", "telegram"],
 	"index": {
