@@ -2,7 +2,7 @@
 	"nav": [
 		{"name": "Участие", "url": "#sParticipating"},
 		{"name": "Спикеры", "url": "#sSpeakers"},
-		{"name": "Регистрация", "url": "#"},
+		{"name": "Регистрация", "url": "#sRegistration"},
 		{"name": "Вопросы", "url": "#sFAQ"}
 	],
 	"social": ["vk", "telegram"],
