@@ -1,9 +1,31 @@
 mixin sContact()
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 sContact
-				
+		+e.container.container
+			+img('img/sContacts-bg-1.png').bg-1
+			+b.section-title
+				h2 Контакты
 			+e.row.row
+				.col-auto
+					+e.wrap
+						h4 Электронная почта
+						+e.item
+							+icon('message')
+							a(href="mailto:kpodlegaev@business.fadm.gov.ru ") kpodlegaev@business.fadm.gov.ru 
+				.col-auto
+					+e.wrap
+						h4 Номер телефона
+						+e.item
+							+icon('phone')
+							a(href="tel:+74956688008") +7 (495) 668-80-08 
+				.col-12.w-0.h-0.p-0.m-0 
+				.col-auto
+					+e.wrap
+						h4 Адрес
+						+e.item
+							+icon('pin')
+							p Большой Трёхсвятительский переулок, д. 2/1, стр. 4
+				.col-auto: +soc()
+	// end sFAQ
+
 	// end sContact
