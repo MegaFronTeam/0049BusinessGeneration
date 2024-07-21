@@ -1,9 +1,8 @@
 mixin footer()
 	+b.FOOTER.footer.section
 		.container
-			.row
-				.col
-					
-				.col Footer
-				.col
-				.col-auto
+			+e.row.row
+				.col-md
+					+img('img/logo.png')
+				.col-auto: a(href="#") Политика конфиденциальности
+				.col-auto: a(href="#") Согласие на обработку данных
