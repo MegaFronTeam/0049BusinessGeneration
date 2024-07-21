@@ -97,7 +97,7 @@ $indigo-800: shade-color($indigo, 60%) !default;
 $indigo-900: shade-color($indigo, 80%) !default;
 
 $purple-100: #E9EBFF;
-$purple-200: tint-color($purple, 60%) !default;
+$purple-200: #D3D4FF;
 $purple-300: tint-color($purple, 40%) !default;
 $purple-400: tint-color($purple, 20%) !default;
 $purple-500: $purple !default;
@@ -298,7 +298,7 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
+$primary:       $purple;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -653,8 +653,8 @@ $font-sizes: (
 $headings-margin-bottom:      $spacer * .5 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
-$headings-font-weight:        500 !default;
-$headings-line-height:        1.2 !default;
+$headings-font-weight:        700;
+$headings-line-height:        .95;
 $headings-color:              inherit !default;
 // scss-docs-end headings-variables
 

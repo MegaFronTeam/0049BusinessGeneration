@@ -1,10 +1,30 @@
-.menu{
+.menu {
 	@include media-breakpoint-up(lg) {
 
 		display: flex;
 		text-align: center;
 		@include roww(20px);
 		flex-wrap: wrap;
+    
+    li {
+      // margin-left: 0;
+      margin-right: rem(12);
+      padding: 0;
+    }
+
+    a {
+      display: block;
+      padding: rem(7) rem(12);
+      min-width: rem(87);
+      background: $white;
+      color: $black;
+      border-radius: 59px;
+      font-size: rem(14);
+      font-weight: 500;
+      &:hover {
+        background: $purple-200;
+      }
+    }
 	}
 
 	list-style: none;
@@ -27,7 +47,7 @@
 
 .toggle-menu-mobile {
 	--h: #{em(2)};
-	--color: #{$primary};
+	--color: #{$white};
 	--position: calc(var(--h) * 2);
 	&.on span {
 		--color: transparent;

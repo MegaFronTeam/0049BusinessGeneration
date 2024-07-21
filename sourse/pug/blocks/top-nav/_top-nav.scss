@@ -7,13 +7,29 @@
 		// @include media-breakpoint-up(md) {
 			--bs-gutter-y: var(--bs-gutter-x);
 		// }
-
 	}
+
+  background: $purple;
+
+  
+	&__logo {
+		display: inline-block;
+    // max-width: 70%;
+	}
+
+	padding-top: rem(67);
+  img {
+    width: rem(484);
+    max-width: 100%;
+  }
 	.section-title{
 		
 	}
-	&__col{
-
+  &__col {
+		@include media-breakpoint-down(lg) {
+			padding: 0;
+			margin: 0;
+		}
 	}
 	&__item{
 
