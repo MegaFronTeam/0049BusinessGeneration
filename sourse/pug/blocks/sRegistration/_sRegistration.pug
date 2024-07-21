@@ -1,9 +1,18 @@
 mixin sRegistration(data)
 	// start sRegistration
 	+b.SECTION.sRegistration.section#sRegistration&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 sRegistration
-				
-			+e.row.row
+		+e.container.container
+			+e.wrap
+				+b.section-title.text-center
+					h2 Регистрация
+					p Регистрация на участие в программе проходит в два потока: 
+				+e.row
+					.row
+						.col-lg
+							+e.item(href='#')
+								| Первый поток: <br/> с 5 июля по 27 октября 2024 года
+						.col-lg
+							+e.item
+								| Второй поток: <br/> с 6 августа по 27 ноября 2024 года 
+							span регистрация откроется 6 августа!
 	// end sRegistration
