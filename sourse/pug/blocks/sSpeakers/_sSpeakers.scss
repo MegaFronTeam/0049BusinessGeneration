@@ -2,14 +2,12 @@
 .sSpeakers {
 	--sPT: #{rem(108)};
 	// --sPB: #{rem()};
-	--sTPB: #{rem(60)};
+	--sTPB: #{rem(68)};
 	
   background: $primary;
 	&__row {
     justify-content: space-between;
-		// --bs-gutter-x: #{rem()};
-		// --bs-gutter-y: #{rem()};
-    row-gap: rem(80);
+    row-gap: rem(72);
 	}
 
   .container {
@@ -106,5 +104,6 @@
   &__text {
     font-weight: 500;
     line-height: 1.2;
+    text-wrap: pretty;
   }
 }
