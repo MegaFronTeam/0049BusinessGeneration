@@ -7,7 +7,10 @@
   background: $primary;
 	&__row {
     justify-content: space-between;
-    row-gap: rem(72);
+    row-gap: rem(30);
+    @include media-breakpoint-up(lg) {
+      row-gap: rem(72);
+    }
 	}
 
   .container {
