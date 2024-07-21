@@ -6,12 +6,13 @@
 	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(60)};
 		--sPB: #{rem(60)};
-		--sTPB: #{rem(50)};
+		--sTPB: #{rem(47)};
 	}
 	.section-title {
-		text-transform: uppercase;
+		color: #494F90;
 	}
 	.dd-group {
+		max-width: rem(768);
 		&__item {
 			// max-width: rem();
 		}
