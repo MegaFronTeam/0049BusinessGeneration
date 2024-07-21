@@ -2,20 +2,26 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-	&__row{
-		// --bs-gutter-x: #{rem()};
+	&__row {
+		--bs-gutter-x: #{rem(44)};
 		// @include media-breakpoint-up(md) {
 			--bs-gutter-y: var(--bs-gutter-x);
 		// }
 	}
-
-  background: $purple;
-
   
+  @include media-breakpoint-up(lg) {
+    margin-left: rem(-12);
+  }
+
 	&__logo {
 		display: inline-block;
     // max-width: 70%;
 	}
+  .z, .menu {
+    position: relative;
+    z-index: 4;
+
+  }
 
 	padding-top: rem(67);
   img {
