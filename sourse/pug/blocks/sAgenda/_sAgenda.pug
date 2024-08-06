@@ -1,0 +1,23 @@
+mixin sAgenda(data)
+	// start sAgenda
+	+b.SECTION.sAgenda.section#sAgenda&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Программа
+			+e.row.row
+				+e.col.col-12.col-lg-9
+					+agendaStep(1, 'Распределение по направлениям внутри потока (1 неделя) Этап 2: Знакомство (1 неделя)')
+					+agendaStep(3, 'Проверка гипотезы бизнес-идеи (2 недели)')
+					+agendaStep(4, ' Разработка бизнес-плана (3 недели)')
+					+agendaStep(5, 'Финальное оформление бизнес-плана (2 недели)')
+					+agendaStep(6, 'Защита бизнес-плана (2 недели)')
+					+agendaStep(7, 'Очная защита проекта (1 неделя)')
+				+e.col.col-12.col-lg-3
+					+img('img/coins.png').img
+	// end sAgenda
+
+mixin agendaStep(i, descr)
+	+b.agenda-step
+		.item
+			span Этап #{i}:
+			| #{descr}

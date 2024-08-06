@@ -11,6 +11,10 @@ include ../blocks/sParticipating/_sParticipating.pug
 include ../blocks/sSpeakers/_sSpeakers.pug
 include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/sFAQ/_sFAQ.pug
+include ../blocks/sDirections/_sDirections.pug
+include ../blocks/sExperts/_sExperts.pug
+include ../blocks/sReviews/_sReviews.pug
+include ../blocks/sAgenda/_sAgenda.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -29,7 +33,11 @@ block pagecontent
 		+sParticipating
 		+sSpeakers
 		+sRegistration()
+		+sAgenda
+		+sDirections
 		+sFAQ()
+		+sExperts
+		+sReviews
 		+sPartners()
 		+sContact()
 		

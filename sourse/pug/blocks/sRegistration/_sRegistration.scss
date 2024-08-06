@@ -1,7 +1,7 @@
 // start .sRegistration
 .sRegistration {
 	--sPT: #{rem(0)};
-	--sPB: #{rem(33)};
+	--sPB: #{rem(70)};
 	--sTPB: #{rem(30)};
 	@include media-breakpoint-up(lg) {
 		--sTPB: #{rem(62.400)};
