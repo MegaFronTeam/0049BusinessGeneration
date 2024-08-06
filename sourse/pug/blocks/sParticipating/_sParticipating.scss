@@ -1,7 +1,7 @@
 // start .sParticipating
 .sParticipating {
 	--sPT: #{rem(0)};
-	// --sPB: #{rem()};
+	--sPB: #{rem(70)};
 	--sTPB: #{rem(52)};
 	position: relative;
   z-index: 3;
@@ -79,6 +79,44 @@
     z-index: -1;
     transform: translate(-50%, -50%);
   }
+
+  .btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(10);
+    width: rem(322);
+    max-width: 100%;
+    margin: auto;
+    margin-top: rem(25);
+    font-weight: 600;
+    font-size: rem(18);
+    text-align: center;
+    color: $white;
+    padding-left: rem(80);
+
+    .icon-wrap {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $white;
+      border-radius: 50%;
+      @include mt;
+      width: rem(40);
+      height: rem(40);
+    }
+
+    .icon {
+      fill: #636363;
+      // @include media-breakpoint-down(md) {
+        font-size: rem(12);
+      // }
+    }
+  }
+
+  
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -125,6 +163,7 @@
   }
 
   .icon {
+    fill: #636363;
     @include media-breakpoint-down(md) {
       font-size: rem(12);
     }

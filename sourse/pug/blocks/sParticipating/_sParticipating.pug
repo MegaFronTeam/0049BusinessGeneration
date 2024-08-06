@@ -7,16 +7,20 @@ mixin sParticipating(data)
 				.sub-title Наша программа включает четыре Трека, которые ориентированы на различные категории участников:
 			+e.cards
 				+img('img/gold.png').gold
-				+cardParticipating('Трек 1: Обучающиеся 8-11 классов (14-18 лет)')
-				+cardParticipating('Трек 2: Обучающиеся профессиональных образовательных организаций (16-20 лет)')
-				+cardParticipating('Трек 3: Обучающиеся высших учебных заведений (16-25 лет)')
-				+cardParticipating('Трек 4: Молодые предприниматели с бизнес-идеями (16-35 лет)')
+				+cardParticipating('Трек 1: Обучающиеся 8-11 классов (14-18 лет)', 'https://rosmolbusiness.ru/contests/ad8f6b96-f1e8-4448-807f-35ab80161698')
+				+cardParticipating('Трек 2: Обучающиеся профессиональных образовательных организаций (16-20 лет)', 'https://rosmolbusiness.ru/contests/0e41d9f8-098c-4099-9e52-bb51f9c2b9c3')
+				+cardParticipating('Трек 3: Обучающиеся высших учебных заведений (16-25 лет)', 'https://rosmolbusiness.ru/contests/995fbaae-395a-48f5-857f-38ce3d01de92')
+				+cardParticipating('Трек 4: Молодые предприниматели с бизнес-идеями (16-35 лет)', 'https://rosmolbusiness.ru/contests/c5e4600e-9182-4e0b-a512-85c31a0c59be')
 			.bottom-wrapper
 				.sub-text Выбирай свой трек и начни работу над своим делом уже сегодня!
 				+icon('arrow-hand')
+			.text-center
+				+e.btn.btn.btn-success(href='https://rosmolbusiness.ru/events/a1c0e72c-8c18-43e0-8900-6658a6869c71') Регистрация
+					.icon-wrap: +icon('arrow')
+
 	// end sParticipating
 
-mixin cardParticipating(text)
-	+b.A.card-participating(href='#')
+mixin cardParticipating(text, link)
+	+b.A.card-participating(href=`${link}`)
 		+e.text= text
 		.icon-wrap: +icon('arrow')
