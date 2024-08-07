@@ -35,11 +35,16 @@
   align-items: center;
     display: flex;
     justify-content: center;
-  --swiperArrowPosition: calc(var(--swiperArrowSize) - 40px);
+  --swiperArrowPosition: calc(var(--swiperArrowSize) - 70px);
   background-color:  #f2f2f2;
   // border-color: transparent;
   border: none;
   z-index: 10;
+  
+  @include media-breakpoint-up(sm) {
+    --swiperArrowPosition: calc(var(--swiperArrowSize) - 40px);
+
+  }
   &:hover {
     background-color:  #e7e7e7;
   }

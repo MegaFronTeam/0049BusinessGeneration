@@ -70,7 +70,7 @@ function eventHandler() {
 		},
 
     breakpoints: {
-      768: {
+      992: {
         slidesPerView: 2,
       }
     }

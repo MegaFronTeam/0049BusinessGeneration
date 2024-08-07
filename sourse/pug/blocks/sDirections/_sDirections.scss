@@ -73,7 +73,8 @@
 
   .btn {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
+    max-width: 100%;
     cursor: unset;
     --bs-btn-padding-y: #{rem(26)};
     --bs-btn-padding-x: #{rem(46)};
@@ -81,6 +82,7 @@
     z-index: 2;
     @include media-breakpoint-up(md) {
       transform: translateY(-50%);
+      font-size: 20px;
     }
 
   }
