@@ -2,21 +2,71 @@
 .sExperts {
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
-	// --sTPB: #{rem()};
+	--sTPB: #{rem(80)};
 	
 	&__row{
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};
 	}
+  position: relative;
+  z-index: 2;
 	.section-title{
 		
 	}
 	&__col{
-		
 	}
 	&__item{
-		
+		&:nth-child(2) {
+      margin-top: rem(-50);
+    }
+
+    p {
+      max-width: rem(579);
+      margin-top: rem(14);
+    }
 	}
+  .item_orange {
+		position: relative;
+    background: $orange;
+    border-radius: rem(30) rem(30) 0 0;
+    color: $white;
+    padding: rem(75) rem(30);
+    padding-bottom: 0;
+    @include media-breakpoint-up(lg) {
+      padding: rem(85) rem(59);
+      border-radius: rem(60) rem(60) 0 0;
+      padding-bottom: rem(120);
+    }
+  }
+  .item_white {
+    background: $white;
+    border-radius: rem(30);
+    padding: rem(85) rem(30);
+    position: relative;
+    z-index: 2;
+    @include media-breakpoint-up(lg) {
+      padding: rem(95) rem(59);
+      padding-bottom: rem(80);
+      border-radius: rem(60);
+    }
+  }
+
+  .img {
+    max-width: 100%;
+  }
+
+	@include media-breakpoint-up(lg) {
+    .img {
+      position: absolute;
+      bottom: -20px;
+      right: 20px;
+    }
+  }
+
+
+  &__slider--js {
+    overflow: hidden;
+  }
 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -26,3 +76,30 @@
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
 } // end.sExperts
+
+.person-card {
+  height: 100%;
+  img {
+    width: rem(278);
+    max-width: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    margin-bottom: rem(20);
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: rem(25);
+    margin-bottom: rem(4);
+  }
+
+  &__content {
+    position: relative;
+    max-width: rem(400);
+    margin: auto;
+  }
+
+  &__text {
+    font-weight: 500;
+  }
+}

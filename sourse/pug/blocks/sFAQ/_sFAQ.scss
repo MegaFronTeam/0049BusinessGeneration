@@ -4,8 +4,8 @@
 	--sPB: #{rem(30)};
 	--sTPB: #{rem(27)};
 	@include media-breakpoint-up(lg) {
-		--sPT: #{rem(60)};
-		--sPB: #{rem(106.400)};
+		--sPT: #{rem(50)};
+		--sPB: #{rem(70)};
 		--sTPB: #{rem(50.200)};
 	}
 	&__container {
@@ -34,6 +34,15 @@
 			// max-width: rem();
 		}
 	}
+
+  .img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 40%);
+    z-index: -3;
+    max-width: rem(490);
+  }
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

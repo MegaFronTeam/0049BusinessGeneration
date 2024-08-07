@@ -1,7 +1,7 @@
 // start .sAgenda
 .sAgenda {
 	--sPT: #{rem(65)};
-	// --sPB: #{rem()};
+	--sPB: #{rem(125)};
 	--sTPB: #{rem(55)};
 	background: $primary;
   color: $white;
@@ -11,7 +11,9 @@
 		// --bs-gutter-y: #{rem()};
 	}
 	.section-title{
+    @include media-breakpoint-up(lg) {
 		transform: translateX(-40px);
+    }
 	}
 	&__col{
 		

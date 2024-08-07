@@ -3,7 +3,17 @@ mixin sDirections(data)
 	+b.SECTION.sDirections.section#sDirections&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sDirections
-				
+				h2 Обучаем по направлениям:
 			+e.row.row
+				+directionItem('1', 'Классическое')
+				+directionItem('2', 'Социальное')
+				+directionItem('3', 'Технологическое')
+				+directionItem('4', 'Креативное')
+			.text-center: +e.btn.btn.btn-primary ПРЕДПРИНИМАТЕЛЬСТВО
 	// end sDirections
+
+mixin directionItem(i, text)
+	+e.col.col-md-6
+		+b.direction-item
+			.text-center: +img(`img/directions-img-${i}.png`)
+			+e.text= text

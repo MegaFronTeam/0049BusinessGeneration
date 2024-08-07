@@ -28,6 +28,27 @@
 		}
 	}
 }
+.swiper-button-prev .icon {
+  transform: rotate(180deg);
+}
+.swiper-button-hand {
+  align-items: center;
+    display: flex;
+    justify-content: center;
+  --swiperArrowPosition: calc(var(--swiperArrowSize) - 40px);
+  background-color:  #f2f2f2;
+  // border-color: transparent;
+  border: none;
+  z-index: 10;
+  &:hover {
+    background-color:  #e7e7e7;
+  }
+  .icon {
+    fill: #636363;
+    font-size: rem(16);
+
+  }
+}
 
 .counter {
 	counter-reset: num;

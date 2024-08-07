@@ -299,6 +299,23 @@ class JSCCommon {
 		let currentYear = document.querySelector(el);
 		if (currentYear) currentYear.innerText = now.getFullYear();
 	}
+  static cropText() {
+		// $('.crop-text--js ').readmore({
+		// 	moreLink: '<a href="#">Показать весь текст</a>',
+		// 	lessLink: '<a href="#">Скрыть</a>',
+		// 	collapsedHeight: 60,
+		// });
+
+		var destroy = $readMoreJS({
+			target: '.crop-text--js p:last-child',
+			wordsCount: 9, // Alternatively use `charactersCount` if you wish to truncate by characters' length.
+			// charactersCount1: 3,
+			toggle: true,
+			moreLink: ' читать полностью..',
+			lessLink: ' Скрыть',
+			linkClass: 'rm-link-classname'
+    })
+  }
 
 	static makeDDGroup() {
 		$(".dd-head-js").on("click", function () {
@@ -422,6 +439,7 @@ class JSCCommon {
 		this.disabledBtn();
 		this.customSelect();
 		this.setScreen();
+		this.cropText();
 		// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 		JSCCommon.animateScroll();
 

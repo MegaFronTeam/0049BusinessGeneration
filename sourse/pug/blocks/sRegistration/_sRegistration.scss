@@ -9,6 +9,7 @@
 
 	margin-top: rem(-91);
 	&__wrap {
+    position: relative;
 		padding: rem(66) rem(20) rem(20) rem(20);
 		background-color: $gray-200;
 		border-radius: rem(60);
@@ -37,6 +38,7 @@
 	}
 	.section-title{
 		h2 {
+      color: $indigo;
 			margin-bottom: rem(21);
 		}
 	}
@@ -79,6 +81,16 @@
 			}
 		}
 	}
+
+  .img {
+    position: absolute;
+    top: 62%;
+    left: 0;
+    width: 490px;
+    max-width: 80vw;
+    z-index: 0;
+    transform: translate(-26%,-50%);
+  }
 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
