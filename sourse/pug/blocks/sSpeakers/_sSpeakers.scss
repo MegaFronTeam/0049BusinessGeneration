@@ -1,105 +1,113 @@
 // start .sSpeakers
 .sSpeakers {
 	--sPT: #{rem(108)};
-	--sPB: #{rem(173.200)};
+	--sPB: #{rem(173.2)};
 	--sTPB: #{rem(68)};
-	
-  background: $primary;
+
+	background: $primary;
 	&__row {
-    justify-content: space-between;
-    row-gap: rem(30);
-    @include media-breakpoint-up(lg) {
-      row-gap: rem(72);
-    }
+		justify-content: space-between;
+		row-gap: rem(30);
+		@include media-breakpoint-up(lg) {
+			// --bs-gutter-x: #{rem(102)};
+			justify-content: space-between;
+		}
+		@include media-breakpoint-up(lg) {
+			row-gap: rem(72);
+		}
 	}
 
-  .container {
-    position: relative;
-  }
+	.container {
+		position: relative;
+	}
 
-  .puzzle-orange {
-    position: absolute;
-    top: -28px;
-    left: 100%;
-    transform: rotate(-264deg) translateY(32%);
-  }
+	.puzzle-orange {
+		position: absolute;
+		top: -28px;
+		left: 100%;
+		transform: rotate(-264deg) translateY(32%);
+	}
 
-  .puzzle-orange-2 {
-    position: absolute;
-    top: 47%;
-    left: -190px;
-    transform: rotate(-133deg);
-  }
+	.puzzle-orange-2 {
+		position: absolute;
+		top: 47%;
+		left: -190px;
+		transform: rotate(-133deg);
+	}
 
-	.section-title{
+	.section-title {
 		color: $white;
 	}
 
-	&__col{
-    @include media-breakpoint-up(lg) {
-      &:nth-child(2) .card-speaker,
-      &:nth-child(5) .card-speaker {
-        margin: auto;
-      }
-      &:nth-child(3n) .card-speaker {
-        margin-left: auto;
-      }
-    }
+	.card-speaker {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&__col {
+		@include media-breakpoint-up(lg) {
+			max-width: calc(#{rem(324)} + var(--bs-gutter-x));
+		}
 	}
 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-between(md, xl) {}
-	@include media-breakpoint-only(xl) {}
-	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
 } // end.sSpeakers
 
 .card-speaker {
-  color: $white;
-  max-width: rem(324);
-  
-  @include media-breakpoint-down(lg) {
-    margin: auto;
-  }
-  
+	color: $white;
+	max-width: rem(324);
 
-  img {
-    max-width: 100%;
-  }
+	@include media-breakpoint-down(lg) {
+		margin: auto;
+	}
 
-  &__img-wrap {
-    margin-bottom: rem(20);
-    position: relative;
-    z-index: 1;
-    width: rem(324);
-    max-width: 100%;
-    border-radius: 0 0 46% 46%;
-    overflow: hidden;
+	img {
+		max-width: 100%;
+	}
 
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: rem(324);
-      background: $green;
-      border-radius: 50%;
-      z-index: -1;
-    }
-  }
+	&__img-wrap {
+		margin-bottom: rem(20);
+		position: relative;
+		z-index: 1;
+		width: rem(324);
+		max-width: 100%;
+		border-radius: 0 0 46% 46%;
+		overflow: hidden;
 
-  &__title {
-    font-weight: 700;
-    font-size: 25px;
-    margin-bottom: rem(5);
-  }
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: rem(324);
+			background: $green;
+			border-radius: 50%;
+			z-index: -1;
+		}
+	}
 
-  &__text {
-    font-weight: 500;
-    line-height: 1.2;
-    text-wrap: pretty;
-  }
+	&__title {
+		font-weight: 700;
+		font-size: 25px;
+		margin-bottom: rem(5);
+	}
+
+	&__text {
+		font-weight: 500;
+		line-height: 1.2;
+		text-wrap: pretty;
+	}
 }

@@ -60,8 +60,7 @@ function eventHandler() {
 		freeModeMomentum: true,
 	});
 
-  const personsSwiper = new Swiper(".sExperts__slider--js", {
-
+	const personsSwiper = new Swiper(".sExperts__slider--js", {
 		slidesPerView: 1,
 		spaceBetween: 50,
 		navigation: {
@@ -69,20 +68,21 @@ function eventHandler() {
 			prevEl: ".sExperts__slider--js .swiper-button-prev",
 		},
 
-    breakpoints: {
-      992: {
-        slidesPerView: 2,
-      }
-    }
+		breakpoints: {
+			992: {
+				slidesPerView: 2,
+			},
+		},
 	});
 
-  const reviewsSwiper = new Swiper(".sReviews__slider--js", {
-
+	const reviewsSwiper = new Swiper(".sReviews__slider--js", {
 		slidesPerView: 1,
 		spaceBetween: 50,
-
+		navigation: {
+			nextEl: ".sReviews .swiper-button-next",
+			prevEl: ".sReviews .swiper-button-prev",
+		},
 	});
-
 }
 if (document.readyState !== "loading") {
 	eventHandler();
