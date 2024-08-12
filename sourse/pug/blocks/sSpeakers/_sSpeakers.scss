@@ -8,9 +8,12 @@
 	&__row {
 		justify-content: space-between;
 		row-gap: rem(30);
+		@include media-breakpoint-up(xl) {
+		}
 		@include media-breakpoint-up(lg) {
-			// --bs-gutter-x: #{rem(102)};
-			justify-content: space-between;
+			--bs-gutter-x: calc(#{rem(52)} + 2vw);
+			// justify-content: space-around;
+			justify-content: center;
 		}
 		@include media-breakpoint-up(lg) {
 			row-gap: rem(72);
@@ -92,7 +95,8 @@
 			bottom: 0;
 			left: 0;
 			width: 100%;
-			height: rem(324);
+			aspect-ratio: 1;
+			// height: rem(324);
 			background: $green;
 			border-radius: 50%;
 			z-index: -1;
