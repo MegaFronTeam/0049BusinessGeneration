@@ -78,6 +78,7 @@ function eventHandler() {
 	const reviewsSwiper = new Swiper(".sReviews__slider--js", {
 		slidesPerView: 1,
 		spaceBetween: 50,
+		autoHeight: true,
 		navigation: {
 			nextEl: ".sReviews .swiper-button-next",
 			prevEl: ".sReviews .swiper-button-prev",
