@@ -4,175 +4,182 @@
 	--sPB: #{rem(70)};
 	--sTPB: #{rem(52)};
 	position: relative;
-  z-index: 3;
-	&__row{
+	z-index: 3;
+	&__row {
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};
 	}
-	.section-title{
-		
+	.section-title {
 	}
-  .container {
-    position: relative;
-    z-index: 1;
-    &::before {
-      content: '';
-      position: absolute;
-      top: -60px;
-      left: -60px;
-      width: calc( 100% + 60*2px);
-      height: 200px;
-      z-index: -1;
-      border-radius: rem(60);
-      background: $body-bg;
-    }
-  }
+	.container {
+		position: relative;
+		z-index: 1;
+		&::before {
+			content: "";
+			position: absolute;
+			top: -60px;
+			left: -60px;
+			width: calc(100% + 60 * 2px);
+			height: 200px;
+			z-index: -1;
+			border-radius: rem(60);
+			background: $body-bg;
+		}
+	}
 
-  .sub-text {
-    font-weight: 700;
-    font-size: rem(20);
-    color: $gray-600;
-  }
+	.sub-text {
+		font-weight: 700;
+		font-size: rem(20);
+		color: $gray-600;
+	}
 
-
-  h2 {
-    color: $indigo;
-    margin-bottom: rem(22);
-  }
-	&__col{
-		
+	h2 {
+		color: $indigo;
+		margin-bottom: rem(22);
+	}
+	&__col {
 	}
 	&__cards {
-    position: relative;
-    max-width: rem(1160);
-    margin: auto;
-    margin-bottom: rem(52);
+		position: relative;
+		max-width: rem(1160);
+		margin: auto;
+		margin-bottom: rem(52);
 		display: grid;
-    gap: rem(22);
-    grid-template-columns: 1fr;
-    @include media-breakpoint-up(lg) {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-    }
+		gap: rem(22);
+		grid-template-columns: 1fr;
+		@include media-breakpoint-up(lg) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
 	}
-  
-  .bottom-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
-    @include media-breakpoint-up(lg) {
-      margin-left: rem(70);
-    }
-  }
 
-  .icon-arrow-hand {
-    margin-top: rem(-20);
-    fill: $gray-600;
-  }
+	.bottom-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
 
-  .gold {
-    position: absolute;
-    left: -3%;
-    top: 50%;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-  }
+		@include media-breakpoint-up(lg) {
+			margin-left: rem(70);
+		}
+	}
 
-  .btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: rem(10);
-    width: rem(322);
-    max-width: 100%;
-    margin: auto;
-    margin-top: rem(25);
-    font-weight: 600;
-    font-size: rem(18);
-    text-align: center;
-    color: $white;
-    padding-left: rem(80);
+	.icon-arrow-hand {
+		margin-top: rem(-20);
+		fill: $gray-600;
+	}
 
-    .icon-wrap {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: $white;
-      border-radius: 50%;
-      @include mt;
-      width: rem(40);
-      height: rem(40);
-    }
+	.gold {
+		position: absolute;
+		left: -3%;
+		top: 50%;
+		z-index: -1;
+		transform: translate(-50%, -50%);
+	}
 
-    .icon {
-      fill: #636363;
-      // @include media-breakpoint-down(md) {
-        font-size: rem(12);
-      // }
-    }
-  }
+	.btn {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: rem(10);
+		width: rem(322);
+		max-width: 100%;
+		margin: auto;
+		margin-top: rem(25);
+		font-weight: 600;
+		font-size: rem(18);
+		text-align: center;
+		color: $white;
+		padding-left: rem(80);
 
-  
+		.icon-wrap {
+			flex-shrink: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: $white;
+			border-radius: 50%;
+			@include mt;
+			width: rem(40);
+			height: rem(40);
+		}
 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-between(md, xl) {}
-	@include media-breakpoint-only(xl) {}
-	@include media-breakpoint-down(xl) {}
+		.icon {
+			fill: #636363;
+			// @include media-breakpoint-down(md) {
+			font-size: rem(12);
+			// }
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
 } // end.sParticipating
 
 .card-participating {
-  border-radius: rem(25);
-  padding: rem(22) rem(29);
-  padding-right: rem(17);
-  background: $orange;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: rem(10);
-  cursor: pointer;
+	border-radius: rem(25);
+	padding: rem(22) rem(29);
+	padding-right: rem(17);
+	background: $orange;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: rem(10);
+	cursor: pointer;
 
-  &__text {
-    color: $white;
-    max-width: rem(400);
-    line-height: 1.2;
-    font-weight: 600;
-    font-size: rem(18);
-    text-wrap: pretty;
-  }
+	&__text {
+		color: $white;
+		max-width: rem(400);
+		line-height: 1.2;
+		font-weight: 600;
+		font-size: rem(18);
+		text-wrap: pretty;
+	}
 
-  .icon-wrap {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: $white;
-    border-radius: 50%;
-    @include mt;
-    width: rem(38);
-    height: rem(38);
-    @include media-breakpoint-up(md) {
-      width: rem(58);
-      height: rem(58);
-    }
-  }
+	.icon-wrap {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: $white;
+		border-radius: 50%;
+		@include mt;
+		width: rem(38);
+		height: rem(38);
+		@include media-breakpoint-up(md) {
+			width: rem(58);
+			height: rem(58);
+		}
+	}
 
-  .icon {
-    fill: #636363;
-    @include media-breakpoint-down(md) {
-      font-size: rem(12);
-    }
-  }
+	.icon {
+		fill: #636363;
+		@include media-breakpoint-down(md) {
+			font-size: rem(12);
+		}
+	}
 
-  &:hover {
-    background: #c85434;
-    .icon-wrap {
-      opacity: .9;
-    }
-  }
+	&:hover {
+		background: #c85434;
+		.icon-wrap {
+			opacity: 0.9;
+		}
+	}
+}
+.puzzle-top {
+	position: absolute;
+	top: 0;
+	right: 0;
 }

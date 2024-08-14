@@ -6,7 +6,12 @@ mixin sExperts(data)
 				+e.row.row
 					.col-lg-7
 						h2 Очный этап
-						p 40 лучших участников получат шанс представить свой проект представить свой проект на очной инвест-сессии перед экспертами!
+						+e.description
+							p 40 лучших 
+								img(src="img/svg/arrow-circle.svg") 
+								| участников 
+								br
+								| получат шанс представить свой проект  #[span на очной] инвест-сессии перед экспертами!
 					+e.col.col
 						+img('img/experts-img.png').img
 			+e.item.item_white

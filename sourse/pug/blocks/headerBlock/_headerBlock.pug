@@ -1,22 +1,28 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
+		+img('img/puzzle-top.png').puzzle-top
 		.container
 
 			+e.row.row
 				+e.col.col-12.col-lg-8
 					+b.section-title
 						h1 Бизнес.<br>Поколение
-						.sub-text #[span Бесплатная] онлайн-программа по развитию предпринимательских компетенций и старту бизнеса
+						.sub-text #[span Бесплатная]    онлайн-программа по&nbsp;старту и&nbsp;развитию бизнеса
+						a.sParticipating__btn.btn.btn-success(href='https://rosmolbusiness.ru/events/a1c0e72c-8c18-43e0-8900-6658a6869c71') Принять участие
+							.icon-wrap: +icon('arrow')
 					+e.block
-						+e.item Наша миссия – помочь воплотить твою мечту или идею в реальный бизнес.
 						+e.item
-							p В «Бизнес.Поколении» действующие предприниматели, эксперты и бизнес-тренеры в онлайн-формате расскажут участникам о предпринимательской и инновационной деятельности, а также помогут запустить своё дело с нуля.
-							p 40 лучших из лучших участников в финале представят свой проект инвесторам в рамках заключительного этапа – инвестиционных сессий, и, при успешной защите, получат  консультационную и, возможно, финансовую поддержку в его реализации.
+							ul
+								li 7 этапов проработки твоего бизнес-плана
+								li 5 онлайн-встреч с опытными бизнес-наставниками
+								li 9 видеолекций от экспертов-практиков
+								li 12 недель практики и консультаций
+								li 40 финалистов: участников очной защиты 
+								li 8 победителей в 2024 году
 
 				+e.col.col-12.col-lg-4
-					+img('img/puzzle-orange.png').puzzle-orange
-					+img('img/puzzles.png').puzzles
+					+img('img/head-elements.png').puzzles
 					+e.img-wrap.ms-auto
 						+img('img/headerBlock-img-1.png').img
 	// end headerBlock

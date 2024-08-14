@@ -66,6 +66,33 @@
 		overflow: hidden;
 	}
 
+	&__description {
+		background-color: #fff;
+		padding: 16px 30px;
+		max-width: 670px;
+
+		border-radius: 40px;
+		@include rfs(27px);
+		color: $body-color;
+		@include media-breakpoint-up(lg) {
+			margin-right: -80px;
+		}
+
+		p {
+			max-width: none;
+			img {
+				margin-right: 5px;
+			}
+			// max-width: 610px;
+			span {
+				display: inline-block;
+				background: #f1fc00;
+				border-radius: 100px;
+				padding: rem(1) rem(8);
+			}
+		}
+	}
+
 	@include media-breakpoint-up(xl) {
 	}
 	@include media-breakpoint-up(lg) {
