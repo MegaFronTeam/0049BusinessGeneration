@@ -1,5 +1,5 @@
 /**
- * Swiper 11.1.9
+ * Swiper 11.1.5
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: July 31, 2024
+ * Released on: July 15, 2024
  */
 
 var Swiper = (function () {
@@ -341,22 +341,7 @@ var Swiper = (function () {
     if (selector === void 0) {
       selector = '';
     }
-    const children = [...element.children];
-    if (element instanceof HTMLSlotElement) {
-      children.push(...element.assignedElements());
-    }
-    if (!selector) {
-      return children;
-    }
-    return children.filter(el => el.matches(selector));
-  }
-  function elementIsChildOf(el, parent) {
-    const isChild = parent.contains(el);
-    if (!isChild && parent instanceof HTMLSlotElement) {
-      const children = [...parent.assignedElements()];
-      return children.includes(el);
-    }
-    return isChild;
+    return [...element.children].filter(el => el.matches(selector));
   }
   function showWarning(text) {
     try {
@@ -2659,7 +2644,7 @@ var Swiper = (function () {
     }
     let targetEl = e.target;
     if (params.touchEventsTarget === 'wrapper') {
-      if (!elementIsChildOf(targetEl, swiper.wrapperEl)) return;
+      if (!swiper.wrapperEl.contains(targetEl)) return;
     }
     if ('which' in e && e.which === 3) return;
     if ('button' in e && e.button > 0) return;
@@ -2909,7 +2894,7 @@ var Swiper = (function () {
       resistanceRatio = 0;
     }
     if (diff > 0) {
-      if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.slidesSizesGrid[swiper.activeIndex + 1] - (params.slidesPerView !== 'auto' && swiper.slides.length - params.slidesPerView >= 2 ? swiper.slidesSizesGrid[swiper.activeIndex + 1] + swiper.params.spaceBetween : 0) - swiper.params.spaceBetween : swiper.minTranslate())) {
+      if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.slidesSizesGrid[swiper.activeIndex + 1] : swiper.minTranslate())) {
         swiper.loopFix({
           direction: 'prev',
           setTranslate: true,
@@ -2923,7 +2908,7 @@ var Swiper = (function () {
         }
       }
     } else if (diff < 0) {
-      if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] + swiper.params.spaceBetween + (params.slidesPerView !== 'auto' && swiper.slides.length - params.slidesPerView >= 2 ? swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] + swiper.params.spaceBetween : 0) : swiper.maxTranslate())) {
+      if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] : swiper.maxTranslate())) {
         swiper.loopFix({
           direction: 'next',
           setTranslate: true,
@@ -5141,7 +5126,6 @@ var Swiper = (function () {
               lastEventBeforeSnap = newEvent;
               recentWheelEvents.splice(0);
               timeout = nextTick(() => {
-                if (swiper.destroyed || !swiper.params) return;
                 swiper.slideToClosest(swiper.params.speed, true, undefined, snapToThreshold);
               }, 0); // no delay; move on next tick
             }
@@ -5151,7 +5135,6 @@ var Swiper = (function () {
               // we'll consider a scroll "complete" when there haven't been any wheel events
               // for 500ms.
               timeout = nextTick(() => {
-                if (swiper.destroyed || !swiper.params) return;
                 const snapToThreshold = 0.5;
                 lastEventBeforeSnap = newEvent;
                 recentWheelEvents.splice(0);
@@ -7125,21 +7108,17 @@ var Swiper = (function () {
       if (typeof window !== 'undefined' && (
       // eslint-disable-line
       typeof swiper.params.controller.control === 'string' || swiper.params.controller.control instanceof HTMLElement)) {
-        const controlElements = typeof swiper.params.controller.control === 'string' ? [...document.querySelectorAll(swiper.params.controller.control)] : [swiper.params.controller.control];
-        controlElements.forEach(controlElement => {
-          if (!swiper.controller.control) swiper.controller.control = [];
-          if (controlElement && controlElement.swiper) {
-            swiper.controller.control.push(controlElement.swiper);
-          } else if (controlElement) {
-            const eventName = `${swiper.params.eventsPrefix}init`;
-            const onControllerSwiper = e => {
-              swiper.controller.control.push(e.detail[0]);
-              swiper.update();
-              controlElement.removeEventListener(eventName, onControllerSwiper);
-            };
-            controlElement.addEventListener(eventName, onControllerSwiper);
-          }
-        });
+        const controlElement = document.querySelector(swiper.params.controller.control);
+        if (controlElement && controlElement.swiper) {
+          swiper.controller.control = controlElement.swiper;
+        } else if (controlElement) {
+          const onControllerSwiper = e => {
+            swiper.controller.control = e.detail[0];
+            swiper.update();
+            controlElement.removeEventListener('init', onControllerSwiper);
+          };
+          controlElement.addEventListener('init', onControllerSwiper);
+        }
         return;
       }
       swiper.controller.control = swiper.params.controller.control;
@@ -7187,8 +7166,7 @@ var Swiper = (function () {
         containerRoleDescriptionMessage: null,
         itemRoleDescriptionMessage: null,
         slideRole: 'group',
-        id: null,
-        scrollOnFocus: true
+        id: null
       }
     });
     swiper.a11y = {
@@ -7384,7 +7362,7 @@ var Swiper = (function () {
       visibilityChangedTimestamp = new Date().getTime();
     };
     const handleFocus = e => {
-      if (swiper.a11y.clicked || !swiper.params.a11y.scrollOnFocus) return;
+      if (swiper.a11y.clicked) return;
       if (new Date().getTime() - visibilityChangedTimestamp < 100) return;
       const slideEl = e.target.closest(`.${swiper.params.slideClass}, swiper-slide`);
       if (!slideEl || !swiper.slides.includes(slideEl)) return;
@@ -8207,16 +8185,15 @@ var Swiper = (function () {
             init();
             update(true);
           } else if (thumbsElement) {
-            const eventName = `${swiper.params.eventsPrefix}init`;
             const onThumbsSwiper = e => {
               thumbs.swiper = e.detail[0];
-              thumbsElement.removeEventListener(eventName, onThumbsSwiper);
+              thumbsElement.removeEventListener('init', onThumbsSwiper);
               init();
               update(true);
               thumbs.swiper.update();
               swiper.update();
             };
-            thumbsElement.addEventListener(eventName, onThumbsSwiper);
+            thumbsElement.addEventListener('init', onThumbsSwiper);
           }
           return thumbsElement;
         };
@@ -9644,7 +9621,7 @@ var Swiper = (function () {
   }
 
   /**
-   * Swiper 11.1.9
+   * Swiper 11.1.5
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *
@@ -9652,7 +9629,7 @@ var Swiper = (function () {
    *
    * Released under the MIT License
    *
-   * Released on: July 31, 2024
+   * Released on: July 15, 2024
    */
 
 

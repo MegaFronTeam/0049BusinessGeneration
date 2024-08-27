@@ -1,5 +1,5 @@
 /**
- * Swiper Custom Element 11.1.9
+ * Swiper Custom Element 11.1.5
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: July 31, 2024
+ * Released on: July 15, 2024
  */
 
 (function () {
@@ -338,22 +338,7 @@
     if (selector === void 0) {
       selector = '';
     }
-    const children = [...element.children];
-    if (element instanceof HTMLSlotElement) {
-      children.push(...element.assignedElements());
-    }
-    if (!selector) {
-      return children;
-    }
-    return children.filter(el => el.matches(selector));
-  }
-  function elementIsChildOf(el, parent) {
-    const isChild = parent.contains(el);
-    if (!isChild && parent instanceof HTMLSlotElement) {
-      const children = [...parent.assignedElements()];
-      return children.includes(el);
-    }
-    return isChild;
+    return [...element.children].filter(el => el.matches(selector));
   }
   function showWarning(text) {
     try {
@@ -2621,7 +2606,7 @@
     }
     let targetEl = e.target;
     if (params.touchEventsTarget === 'wrapper') {
-      if (!elementIsChildOf(targetEl, swiper.wrapperEl)) return;
+      if (!swiper.wrapperEl.contains(targetEl)) return;
     }
     if ('which' in e && e.which === 3) return;
     if ('button' in e && e.button > 0) return;
@@ -2871,7 +2856,7 @@
       resistanceRatio = 0;
     }
     if (diff > 0) {
-      if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.slidesSizesGrid[swiper.activeIndex + 1] - (params.slidesPerView !== 'auto' && swiper.slides.length - params.slidesPerView >= 2 ? swiper.slidesSizesGrid[swiper.activeIndex + 1] + swiper.params.spaceBetween : 0) - swiper.params.spaceBetween : swiper.minTranslate())) {
+      if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.slidesSizesGrid[swiper.activeIndex + 1] : swiper.minTranslate())) {
         swiper.loopFix({
           direction: 'prev',
           setTranslate: true,
@@ -2885,7 +2870,7 @@
         }
       }
     } else if (diff < 0) {
-      if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] + swiper.params.spaceBetween + (params.slidesPerView !== 'auto' && swiper.slides.length - params.slidesPerView >= 2 ? swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] + swiper.params.spaceBetween : 0) : swiper.maxTranslate())) {
+      if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] : swiper.maxTranslate())) {
         swiper.loopFix({
           direction: 'next',
           setTranslate: true,
@@ -4653,7 +4638,7 @@
   }
 
   /**
-   * Swiper Custom Element 11.1.9
+   * Swiper Custom Element 11.1.5
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *
@@ -4661,7 +4646,7 @@
    *
    * Released under the MIT License
    *
-   * Released on: July 31, 2024
+   * Released on: July 15, 2024
    */
 
 
