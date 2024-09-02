@@ -3,12 +3,12 @@
 		{"name": "Участие", "url": "#sParticipating"},
 		{"name": "Спикеры", "url": "#sSpeakers"},
 		{"name": "Регистрация", "url": "#sRegistration"},
-		{"name": "Направления", "url": "#sRegistration"},
-		{"name": "Программа", "url": "#sRegistration"},
-		{"name": "Очный этап", "url": "#sRegistration"},
-		{"name": "Отзывы", "url": "#sRegistration"},
+		{"name": "Направления", "url": "#sDirections"},
+		{"name": "Программа", "url": "#sAgenda"},
+		{"name": "Очный этап", "url": "#sExperts"},
+		{"name": "Отзывы", "url": "#sReviews"},
 		{"name": "Вопросы", "url": "#sFAQ"},
-		{"name": "Контакты", "url": "#sFAQ"}
+		{"name": "Контакты", "url": "#sContact"}
 	],
 	"social": ["vk", "telegram"],
 	"index": {
